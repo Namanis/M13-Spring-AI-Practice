@@ -13,3 +13,15 @@ spring:
     open-in-view: false
 
 #TODO 2: add SpringAI configuration properties here
+  ai:
+    openai:
+      api-key: ${OPENROUTER_API_KEY}
+      base-url: ${OPENROUTER_BASE_URL:https://openrouter.ai/api/v1}
+      custom-headers:
+        HTTP-Referer: ${OPENROUTER_REFERER:http://localhost:8080}
+        X-OpenRouter-Title: ${OPENROUTER_TITLE:SpringAI Bootcamp ChatBot}
+      chat:
+        model: ${OPENROUTER_MODEL:meta-llama/llama-3.2-3b-instruct}
+
+openrouter:
+  system-prompt: ${OPENROUTER_SYSTEM_PROMPT:You are a helpful, concise assistant.}
