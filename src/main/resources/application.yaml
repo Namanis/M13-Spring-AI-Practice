@@ -12,7 +12,6 @@ spring:
         dialect: org.hibernate.community.dialect.SQLiteDialect
     open-in-view: false
 
-#TODO 2: add SpringAI configuration properties here
   ai:
     openai:
       api-key: ${OPENROUTER_API_KEY}
@@ -24,4 +23,4 @@ spring:
         model: ${OPENROUTER_MODEL:meta-llama/llama-3.2-3b-instruct}
 
 openrouter:
-  system-prompt: ${OPENROUTER_SYSTEM_PROMPT:You are a helpful, concise assistant.}
+  system-prompt: ${OPENROUTER_SYSTEM_PROMPT:You teach unit testing to junior Java developers. When the user pastes code, first list in 3 bullet points what should be tested and why. Don't say answer right away. Point to correct solution by giving advices.}

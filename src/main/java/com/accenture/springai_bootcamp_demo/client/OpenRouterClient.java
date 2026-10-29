@@ -22,7 +22,6 @@ import java.util.List;
 @Slf4j
 @Component
 public class OpenRouterClient {
-    //TODO 4: define and initialize a ChatClient
     private final ChatClient chatClient;
 
     public OpenRouterClient(ChatClient.Builder chatClientBuilder, OpenRouterProperties openRouterProperties) {
@@ -43,7 +42,6 @@ public class OpenRouterClient {
                     .messages(toSpringMessages(history))
                     .call()
                     .content();
-            //TODO 5: make a call through ChatClient with the conversation history (including latest user message)
         } catch (OpenRouterException ex) {
             throw ex;
         } catch (RuntimeException ex) {
@@ -52,7 +50,6 @@ public class OpenRouterClient {
         }
     }
 
-    //TODO 6: use helper methods/mappers/utility classes to construct the payload for a cleaner solution
     private List<Message> toSpringMessages(List<ChatMessage> history) {
         List<Message> messages = new ArrayList<>();
         for (ChatMessage message : history) {
